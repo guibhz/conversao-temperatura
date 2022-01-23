@@ -1,7 +1,15 @@
-FROM node:12.18.1
+# imagem a ser utilizada
+FROM node
+# diretorio da aplicação
 WORKDIR /app
+# copiar os arquivos para o diretorio app
 COPY package*.json ./
+# instalar o NPM
 RUN npm install
+# copiar o restante dos arquivos seseparadamente
+# evitando problemas de cache
 COPY . .
+# expoe a posta 8080
 EXPOSE 8080
+# executa o servidor
 CMD [ "node", "server.js" ]
