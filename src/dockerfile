@@ -1,5 +1,5 @@
 # imagem a ser utilizada
-FROM node
+FROM node:12-slim
 # diretorio da aplicação
 WORKDIR /app
 # copiar os arquivos para o diretorio app
